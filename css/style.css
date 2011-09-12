@@ -1,1 +1,163 @@
 /*** Style Sheet for geoTraveler ***/
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 100%;
+	font-weight: normal;
+
+	background-color: #fff;
+}
+
+#container {
+	margin: 0 auto;
+	width: 960px;
+	z-index: 2;
+}
+
+header {
+	width: 100%;
+	/*float: left;*/
+}
+
+#banner {
+	height: 377px;
+	width: 100%;
+	position: absolute;
+	top: 160px;
+	z-index: -1;
+
+	background-image: -webkit-gradient(
+    	linear,
+    	left top,
+    	left bottom,
+    	color-stop(0.33, rgb(0,84,144)),
+    	color-stop(0.93, rgb(0,24,42))
+	);
+	background-image: -moz-linear-gradient(
+    	center top,
+    	rgb(0,84,144) 33%,
+    	rgb(0,24,42) 93%
+	);
+}
+
+aside {
+	width: 225px;
+	height: 500px;
+	float: left;
+	margin-right: 10px;
+	color: #fff;
+}
+	aside h3 {
+		color: #000;
+		font-size: 0.7em;
+	}
+	aside h4 {
+		margin-top:28px;
+	}
+
+#map {
+	width: 700px;
+	height: 435px;
+	background-color: #fff;
+	float: left;
+	clear: right;
+	border: 1px solid #00528e;
+	margin-bottom: 10px;
+}
+
+#dashboard {
+	width: 700px;
+	min-height: 300px;
+	float: left;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 1120px;
+	text-align: center;
+}
+
+#register {
+	background-color: #fff;
+	border: 1px solid #00528e;
+	margin: 110px auto 0 auto;
+	padding: 15px;
+	width: 60%;
+}
+	#register input {
+		margin: 10px 0;
+	}
+	#register label {
+		width: 150px;
+		display: inline-block;
+	}
+
+/*** Login ***/
+aside form {
+	margin-top: 10px;
+}
+	aside p {
+		margin-top: 8px;
+	}
+
+/*** Dashboard ***/
+#add_location {
+	margin-top: 10px;
+	width: 100%;
+	height: 25px;
+}	
+
+/*** Type ***/
+h1 {
+	
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 1.4em;
+	color: #00538f;
+	float: right;
+	margin: 50px 80px 0 0;
+}
+
+h3 {
+	color: #00538f;
+	font-size: 1.2em;
+	margin-bottom: 25px;	
+}
+
+h4 {
+	border-bottom: 1px solid #00538f;
+	height: 20px;
+}
+
+p {
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
+.white {
+	color: #fff;
+	border-color: #fff;
+}
+
+.error {
+	color: red;
+	margin-bottom: 10px;
+}
+
+.success {
+	color: green;
+	margin-bottom: 10px;
+}
+
+a {
+	color: #c2c2c2;
+	text-decoration: none;
+}
+
+.logout {
+	float: left;
+	margin-top: -24px;
+}
