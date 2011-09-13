@@ -23,6 +23,10 @@
 			<input type="text" name="add_location" id="add_location" placeholder="Add a city, street, or any location">
 			<input type="submit" name="add" value="Add" id="add_button">
 
+			<div id="geo_locs">
+				
+			</div>
+
 		</div>
 
 		<?php include('_footer.php'); ?>

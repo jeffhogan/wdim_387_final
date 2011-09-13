@@ -82,8 +82,8 @@ aside {
 	}
 
 footer {
-	position: absolute;
-	bottom: 0;
+	position: relative;
+	float: left;
 	width: 1120px;
 	text-align: center;
 }
@@ -102,6 +102,22 @@ footer {
 		width: 150px;
 		display: inline-block;
 	}
+
+#geo_locs p, #geo_locs h4 {
+	margin: 10px 0 5px 0;
+	color: #c2c2c2;
+}	
+	#geo_locs p:hover, #geo_locs h4:hover {
+		color: #00528e;
+	}
+
+#geo_locs p {
+	margin-bottom: 30px !important;
+}
+
+#geo_locs h4 {
+	border-bottom: 1px solid #c2c2c2;
+}
 
 /*** Login ***/
 aside form {
@@ -130,6 +146,7 @@ aside form {
 
 #add_button {
 	margin-top: 8px;
+	margin-bottom: 20px;
 }
 
 #dash_list li {

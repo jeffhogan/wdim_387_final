@@ -29,6 +29,8 @@ $(document).ready(function() {
 			
 			geeQuest.request($("#add_location").val());
 
+			$("#add_location").val("");
+
 		}
 	
 	});	
@@ -42,7 +44,9 @@ $(document).ready(function() {
 
      		if ($("#add_location") != "") {
 			
-			geeQuest.request($("#add_location").val());
+				geeQuest.request($("#add_location").val());
+
+				$("#add_location").val("");
 
 			}
 
@@ -98,6 +102,9 @@ geeQuest.update = function (id) {
 		
 		}
 
+		geeQuest.dashboard(id);
+
+
 	});
 
 }
@@ -134,11 +141,12 @@ geeQuest.request = function (address) {
 			//make a marker
 
 			//make an infowindow
-console.log(results);
+
 			//store each pertinant piece of a new location for db
 			geeQuest.userNew.add = results[0].formatted_address;
 
 			geeQuest.userNew.lat = results[0].geometry.location.Ka;
+			
 			geeQuest.userNew.lon = results[0].geometry.location.La;
 
 			console.log(results[0].geometry.location[1]);
@@ -147,6 +155,8 @@ console.log(results);
 			geeQuest.writeDb(geeQuest.userNew);
 
 			//add a new marker to the map
+
+			//update the dash
 			geeQuest.update(geeQuest.userId);
 
 		};
@@ -183,7 +193,7 @@ geeQuest.writeDb = function (object) {
 
   		success: function(data) {
     
-    		
+    		geeQuest.update(geeQuest.userId);
     		
   		}
 	});
@@ -239,6 +249,26 @@ geeQuest.locations = function (id) {
   		}
 	
 	});
+
+}
+
+/**
+* create a dashboard listing of geolocation
+* @param {int}
+* @returns {object}
+*/
+geeQuest.dashboard = function (id) {
+
+	$("#geo_locs").html("");
+
+	for(var loc in geeQuest.userLocs) {
+
+		var item = "<h4>" + geeQuest.userLocs[loc].address_entered + "</h4>" +
+					"<p>" + geeQuest.userLocs[loc].date + "</p>";
+		
+		$("#geo_locs").append(item);
+
+	}
 
 }
 

@@ -13,6 +13,6 @@
 
 	</form>
 
-	<p><a href="retrieve.php">Forgot Password?</a> | <a href="register.php">Register</a></p>
+	<p><a href="register.php">Register</a></p>
 		
 </aside>
