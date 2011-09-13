@@ -17,53 +17,59 @@
 
 		}
 
-	/**
-	 * set the id of the current dash ser id from members
-	 *
-	 * @return int
-	 * @author jeffreyhogan
-	 **/
-	private function setId($user) {
-	
-		GLOBAL $mysqli;
+		/**
+		 * set the id of the current dash ser id from members
+		 *
+		 * @return int
+		 * @author jeffreyhogan
+		 **/
+		private function setId($user) {
+		
+			GLOBAL $mysqli;
 
-		$sql = "SELECT id FROM members WHERE username='$user'";
-		$id = $mysqli->query($sql);
-		$id = $id->fetch_row();
-
-		if ($id) {
+			$sql = "SELECT id FROM members WHERE username='$user'";
 			
-			return $id;
+			$id = $mysqli->query($sql);
+			
+			$id = $id->fetch_row();
 
-		} else {
+			if ($id) {
+				
+				return $id;
 
-			return false;
+			} else {
+
+				return false;
+			}
+
 		}
 
-	}
+		/**
+		 * get all the friends for a specific user
+		 *
+		 * @return object
+		 * @author jeffreyhogan
+		 **/
+		public function show_friends($id) {
 
-	/**
-	 * get all the geolocation points for a specific user
-	 *
-	 * @return object
-	 * @author jeffreyhogan
-	 **/
-	public function getGeo($id) {
-	
+			$names = array();
 		
+			GLOBAL $mysqli;
 
-	}
+			$sql = "SELECT name FROM friends WHERE user_id='$id[0]'";
 
-	/**
-	 * function for writing a geolocation to the database. Looking for an object returned from google's geolocation api
-	 *
-	 * @return void
-	 * @author jeffreyhogan
-	 **/
-	public function writeGeo($obj) {
+			$results = $mysqli->query($sql);
 
+			while($row = $results->fetch_row()) {
+			
+				array_push($names, $row[0]);
+				
+			}
 
-	}
+			return $names;
+
+		}
+
 
 
 

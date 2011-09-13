@@ -6,17 +6,6 @@
  * Library of functions for handling login and authentication
  */
 
-
-/**
- * function to check if a login is valid
- *
- * @return boolean
- * @author jeffreyhogan
- **/
-function login() {
-
-}
-
 /**
  * check to see if the attempted username is something resembling a proper email
  *
@@ -49,14 +38,20 @@ function checkAvailable($name) {
 
 	GLOBAL $mysqli;
 
-	$sql = "SELECT username FROM members WHERE username=$name";
+	$sql = "SELECT id FROM members WHERE username='$name'";
 
 	$result = $mysqli->query($sql);
 
-	if ($result) {
+	$result = $result->num_rows;
+
+	if ($result > 0) {
+
 		return false;
+	
 	} else {
+	
 		return true;
+	
 	}
 
 }

@@ -69,7 +69,17 @@ aside {
 	width: 700px;
 	min-height: 300px;
 	float: left;
+	padding-top: 10px;
 }
+
+.main ul {
+	text-align: center;
+}
+	.main ul li {
+		margin-bottom: 7px;
+		border-bottom: 1px solid #00528e;
+		height: 25px;
+	}
 
 footer {
 	position: absolute;
@@ -101,12 +111,30 @@ aside form {
 		margin-top: 8px;
 	}
 
+#login_main input[type=submit] {
+	margin-top: 10px;
+}
+
+.index_column {
+	float: left;
+	width: 30%;
+	margin-left: 3%;
+}
+
 /*** Dashboard ***/
 #add_location {
 	margin-top: 10px;
 	width: 100%;
 	height: 25px;
 }	
+
+#add_button {
+	margin-top: 8px;
+}
+
+#dash_list li {
+	margin-top: 10px;
+}
 
 /*** Type ***/
 h1 {

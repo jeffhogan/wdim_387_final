@@ -29,9 +29,27 @@ $(document).ready(function() {
 			
 			geeQuest.request($("#add_location").val());
 
-		};
+		}
+	
+	});	
 
-	})
+	//bind event to return key on input field
+	$("#add_location").keyup(function(e) {
+  
+  		if (e.keyCode == '13') {
+     	
+     		e.preventDefault();
+
+     		if ($("#add_location") != "") {
+			
+			geeQuest.request($("#add_location").val());
+
+			}
+
+   		}
+
+	});
+
 
 });
 
@@ -119,8 +137,11 @@ geeQuest.request = function (address) {
 console.log(results);
 			//store each pertinant piece of a new location for db
 			geeQuest.userNew.add = results[0].formatted_address;
-			geeQuest.userNew.lat = results[0].geometry.location.Pa;
-			geeQuest.userNew.lon = results[0].geometry.location.Qa;
+
+			geeQuest.userNew.lat = results[0].geometry.location.Ka;
+			geeQuest.userNew.lon = results[0].geometry.location.La;
+
+			console.log(results[0].geometry.location[1]);
 
 			//Write the new location to the db
 			geeQuest.writeDb(geeQuest.userNew);

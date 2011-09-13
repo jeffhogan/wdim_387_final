@@ -4,7 +4,7 @@
 
 	<h4>Please Log in:</h4>
 
-	<form action="checklogin.php" method="post">
+	<form action="checklogin.php" method="post" id="login_main">
 		
 		<input type="text" name="username" value="" placeholder="email">
 		<input type="password" name="password" value="" placeholder="password">
