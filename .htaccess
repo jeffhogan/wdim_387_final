@@ -1,0 +1,4 @@
+AddCharset UTF-8 .html .php .phtml
+AddHandler php5-script .php
+DirectoryIndex index.php index.html
+RewriteEngine On
